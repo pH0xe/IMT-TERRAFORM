@@ -1,20 +1,10 @@
-resource "kubernetes_service_v1" "vote" {
-  metadata {
-    name = "vote"
-    labels = {
-      app = "vote"
-    }
-  }
-  spec {
-    type = "NodePort"
-    port {
-      name        = "vote-service"
-      port        = 5000
-      target_port = 80
-      node_port   = 31000
-    }
-    selector = {
-      app = "vote"
-    }
-  }
+module "vote_service" {
+  source = "./modules/k8s-services/"
+  
+  metadata_name = "vote"
+  label_app = "vote"
+  port_name = "vote-service"
+  port = 5000
+  target_port = 80
+  node_port = 31000
 }
