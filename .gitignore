@@ -5,4 +5,7 @@ obj/
 .vs/
 node_modules/
 *.lock.hcl
+*.tfstate
+*.tfstate.backup
+
 partie2/*.json
