@@ -10,4 +10,4 @@ node_modules/
 *.lock.info
 partie2/*.json
 
-**/.terraform
+*.terraform
