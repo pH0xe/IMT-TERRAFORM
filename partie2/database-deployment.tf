@@ -2,21 +2,21 @@ resource "kubernetes_deployment" "db" {
   metadata {
     name = "db"
     labels = {
-      "key" = "db"
+      app = "db"
     }
   }
   spec {
     replicas = 1
     selector {
       match_labels = {
-      "key" = "db"
+       app = "db"
       }
     }
 
     template{
       metadata {
         labels = {
-        "key" = "db"
+         app = "db"
         }
       }
       spec {
