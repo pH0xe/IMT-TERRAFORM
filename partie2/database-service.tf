@@ -1,14 +1,15 @@
 resource "kubernetes_service_v1" "db" {
+  
   metadata {
     name = "db"
     labels = {
-      "key" = "db"
+      app = "db"
     }
   }
   spec {
     type="ClusterIP"
     selector = {
-      App = "db"
+      app = "db"
     }
     port {
       name = "db-service"
