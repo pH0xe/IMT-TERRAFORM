@@ -23,7 +23,7 @@ resource "docker_container" "db" {
 
 
   volumes {
-    host_path      = "/db-data"
+    volume_name    = docker_volume.db_data.name
     container_path = "/var/lib/postgresql/data"
   }
 

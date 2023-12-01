@@ -5,3 +5,10 @@ obj/
 .vs/
 node_modules/
 *.lock.hcl
+*.tfstate
+*.tfstate.backup
+*.lock.info
+partie2/*.json
+partie2/private.auto.tfvars
+
+*.terraform
