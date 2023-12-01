@@ -9,6 +9,6 @@ node_modules/
 *.tfstate.backup
 *.lock.info
 partie2/*.json
-partie2/private.tfvars
+partie2/private.auto.tfvars
 
 *.terraform
