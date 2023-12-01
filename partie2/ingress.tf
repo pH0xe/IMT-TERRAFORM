@@ -1,31 +1,13 @@
-resource "kubernetes_ingress_v1" "vote-ingress" {
-  metadata {
-    name = "vote-ingress"
-  }
-  spec {
-    default_backend {
-      service {
-        name = "vote"
-        port {
-          number = 5000
-        }
-      }
-    }
-  }
+module "vote-ingress" {
+  source        = "./modules/ingress"
+  metadata_name = "vote-ingress"
+  service_name  = "vote"
+  service_port  = 5000
 }
 
-resource "kubernetes_ingress_v1" "result-ingress" {
-  metadata {
-    name = "result-ingress"
-  }
-  spec {
-    default_backend {
-      service {
-        name = "result"
-        port {
-          number = 5001
-        }
-      }
-    }
-  }
+module "result-ingress" {
+  source        = "./modules/ingress"
+  metadata_name = "result-ingress"
+  service_name  = "result"
+  service_port  = 5001
 }
